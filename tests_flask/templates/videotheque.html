@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ videotheque.nom }}</title>
+</head>
+<body>
+    <h1>{{ videotheque.nom }}</h1>
+    <p>{{ videotheque.films | length }} films</p>
+    <table border="1">
+        <tr>
+            <th>Titre</th><th>Réalisateur</th><th>Année</th><th>Genre</th><th>Support</th>
+        </tr>
+        {% for film in videotheque.films %}
+        <tr>
+            <td>{{ film.titre }}</td>
+            <td>{{ film.realisateur }}</td>
+            <td>{{ film.annee }}</td>
+            <td>{{ film.genre }}</td>
+            <td>{{ film.support }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Retour</a>
+</body>
+</html>
